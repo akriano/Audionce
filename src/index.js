@@ -25,7 +25,7 @@ app.use(cors({
 }));
 app.use(express.json());
 
-app.get('/', (req, res) => {
+app.get('/', (_req, res) => {
     res.json({
         message: 'Hello World!',
     });
@@ -36,7 +36,7 @@ app.use('/api/logs', logs);
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
 
-const port = process.env.PORT || 1337;
+const port = process.env.PORT || 1377;
 app.listen(port, () => {
     console.log(`Listening at http://localhost:${port}`);
 });
